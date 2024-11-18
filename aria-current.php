@@ -16,28 +16,14 @@
 if (! defined('ABSPATH')) exit('No direct script access allowed');
 
 // Add aria-current="page" to image blocks linking to the current page.
-function
-jl_add_aria_current_to_block($block_content)
+function jl_add_aria_current_to_block($block_content)
 {
-    // If the block does not have an href attribute, return the block content as is.
-    if (strpos($block_content, 'href=') === false) return $block_content;
-
-    // Get the current page URL
     $url_no_slash = untrailingslashit(home_url(add_query_arg(array(), $GLOBALS['wp']->request)));
     $url_slash = trailingslashit($url_no_slash);
 
-    // Stop if no link to the current page is found.
-    if (
-        strpos($block_content, "href=\"$url_slash\"") === false
-        && strpos($block_content, "href=\"$url_no_slash\"") === false
-    )  return $block_content;
+    $pattern = '/href="(?:' . preg_quote($url_no_slash, '/') . '|' . preg_quote($url_slash, '/') . ')"/';
 
-    // Add aria-current="page" to the <a> tag in the block content.
-    $block_content = str_replace(
-        ["href=\"$url_slash\"", "href=\"$url_no_slash\""],
-        ["href=\"$url_slash\" aria-current=\"page\"", "href=\"$url_no_slash\" aria-current=\"page\""],
-        $block_content
-    );
+    $block_content = preg_replace($pattern, '$0 aria-current="page"', $block_content);
 
     return $block_content;
 }
