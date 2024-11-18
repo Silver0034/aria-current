@@ -42,3 +42,9 @@ jl_add_aria_current_to_block($block_content)
     return $block_content;
 }
 add_filter('render_block', 'jl_add_aria_current_to_block');
+
+// On admin page load, check for updates.
+if (is_admin()) {
+    require_once plugin_dir_path(__FILE__) . 'class-updater.php';
+    JLAriaCurrent\Updater::get_instance();
+}
