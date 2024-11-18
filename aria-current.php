@@ -15,7 +15,7 @@
 // Exit if accessed directly.
 if (! defined('ABSPATH')) exit('No direct script access allowed');
 
-// Add aria-current="page" to image blocks linking to the current page.
+// Add aria-current="page" to blocks linking to the current page.
 function jl_add_aria_current_to_block($block_content)
 {
     $url_no_slash = untrailingslashit(home_url(add_query_arg(array(), $GLOBALS['wp']->request)));
