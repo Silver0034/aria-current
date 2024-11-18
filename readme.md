@@ -1,5 +1,10 @@
 # Add Aria Current to Links - WordPress Plugin
 
+[![GitHub release](https://img.shields.io/github/v/release/Silver0034/aria-current?include_prereleases)](https://github.com/Silver0034/aria-current/releases/latest)
+![PHP Version](https://img.shields.io/badge/php->=_8.0.0-blue)
+![WordPress Version](https://img.shields.io/badge/wordpress->=5.0.0-blue)
+![Tested WP Version](https://img.shields.io/badge/tested%20up%20to-6.7-brightgreen)
+
 Automatically add `aria-current="page"` to WordPress blocks linking to the current page.
 
 ## Overview

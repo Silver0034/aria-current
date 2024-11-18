@@ -8,8 +8,8 @@
  * Author: Jacob Lodes
  * Author URI: https://jlodes.com/
  * Text Domain: jl-aria-current
- * Requires at least: 6.6.2
- * Requires PHP: 8.0
+ * Requires at least: 5.0.0
+ * Requires PHP: 5.3.0
  */
 
 // Exit if accessed directly.
