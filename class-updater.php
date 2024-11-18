@@ -18,7 +18,7 @@ if (class_exists('JLAriaCurrent\Updater')) return;
  */
 class Updater
 {
-    private const REPOSITORY = 'Silver0034/aria-updater';
+    private const REPOSITORY = 'Silver0034/aria-current';
     private const PLUGIN_FILE = 'aria-current/aria-current.php';
     private const BASENAME = 'aria-current';
     private const GITHUB_API_BASE = 'https://api.github.com';
@@ -143,7 +143,7 @@ class Updater
 
         if (empty($repo)) return $result;
 
-        $details = \get_plugin_data(plugin_dir_path(__FILE__) . '../aria-current.php');
+        $details = \get_plugin_data(plugin_dir_path(__FILE__) . '/aria-current.php');
 
         // Create array to hold the plugin data
         $plugin = [
